@@ -19,11 +19,15 @@ export default function Header() {
       <div className="h-16 flex items-center justify-between mx-5 md:mx-10 ">
         {/* (Visible only in small screens) */}
         <div className="flex items-center space-x-4 md:hidden">
+          <Link href={'/wishlist'}>
           <FontAwesomeIcon icon={faHeart} className="w-5 h-5 text-cyan-600" />
+          </Link>
+          <Link href={'/cart'}>
           <FontAwesomeIcon
             icon={faBagShopping}
             className="w-5 h-5 text-cyan-600"
           />
+          </Link>
         </div>
 
         <div>
@@ -67,14 +71,14 @@ export default function Header() {
 
         <div className="hidden md:flex space-x-5">
           <Link
-            href={""}
+            href={"/wishlist"}
             className="flex items-center space-x-2 bg-cyan-600 px-4 py-1 rounded-sm font-medium text-white transition-transform duration-500 hover:scale-105"
           >
             WISHLIST
             <FontAwesomeIcon icon={faHeart} className="ms-3" />
           </Link>
           <Link
-            href={""}
+            href={"/cart"}
             className="flex items-center space-x-2 bg-cyan-600 px-4 py-1 rounded-sm font-medium text-white transition-transform duration-500 hover:scale-105"
           >
             CART

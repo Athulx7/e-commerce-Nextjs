@@ -4,6 +4,7 @@ import {
   faBagShopping,
   faHeart,
   faCircleUser,
+  faPowerOff,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
@@ -44,26 +45,27 @@ export default function Header() {
 
         <div className="hidden md:flex font-medium space-x-10">
           <Link
-            href={"/"}
+            href="/shop"
             className="hover:text-gray-400 transition-transform duration-500 hover:scale-95"
           >
             SHOP
           </Link>
+
           <Link
-            href={"/"}
+            href={"/about"}
             className="hover:text-gray-400 transition-transform duration-500 hover:scale-95"
           >
             ABOUT
           </Link>
           <Link
-            href={"/"}
+            href={"/contact"}
             className="hover:text-gray-400 transition-transform duration-500 hover:scale-95"
           >
             CONTACT
           </Link>
         </div>
 
-        {/* <div className="hidden md:flex space-x-5">
+        <div className="hidden md:flex space-x-5">
           <Link
             href={""}
             className="flex items-center space-x-2 bg-cyan-600 px-4 py-1 rounded-sm font-medium text-white transition-transform duration-500 hover:scale-105"
@@ -78,9 +80,17 @@ export default function Header() {
             CART
             <FontAwesomeIcon icon={faBagShopping} className="ms-3" />
           </Link>
-        </div> */}
 
-        <div className="hidden md:flex space-x-5">
+          <button
+            
+            className="flex items-center  space-x-2 bg-cyan-600 px-4 py-1 rounded-sm font-medium text-white transition-transform duration-500 hover:scale-105"
+          >
+            <FontAwesomeIcon icon={faPowerOff} className="" />
+            
+          </button>
+        </div>
+
+        {/* <div className="hidden md:flex space-x-5">
           <Link
             href={""}
             className="flex items-center  space-x-2 bg-cyan-600 px-4 py-1 rounded-sm font-medium text-white transition-transform duration-500 hover:scale-105"
@@ -88,20 +98,20 @@ export default function Header() {
             <FontAwesomeIcon icon={faCircleUser} className="me-3" />
             LOGIN
           </Link>
-        </div>
+        </div> */}
       </div>
 
       {/* Dropdown Menu for Smaller Screens */}
       {menuOpen && (
         <div className="absolute top-16 left-0 w-full bg-white shadow-md p-5">
           <div className="flex flex-col items-start space-y-4">
-            <Link href={"/"} className="font-medium hover:text-gray-400">
+            <Link href={"/shop"} className="font-medium hover:text-gray-400">
               SHOP
             </Link>
-            <Link href={"/"} className="font-medium hover:text-gray-400">
+            <Link href={"/about"} className="font-medium hover:text-gray-400">
               ABOUT
             </Link>
-            <Link href={"/"} className="font-medium hover:text-gray-400">
+            <Link href={"/contact"} className="font-medium hover:text-gray-400">
               CONTACT
             </Link>
 

@@ -1,20 +1,13 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import Link from "next/link";
+import Image from "next/image";
 
-export default function HomeProduct() {
+export default function ShopProduct() {
   return (
     <>
-      <div className="py-16">
-        <div className="text-center">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl text-cyan-600 font-thin">
-            Explore the Collection
-          </h2>
-        </div>
-
-        <div className="pt-16 px-4 sm:px-8 lg:px-16">
+      <div className="pt-16 px-4 sm:px-8 lg:px-16">
         <div className="flex flex-wrap justify-center gap-8">
           <div className="border-2 rounded-sm border-gray-400 w-72 h-96 flex flex-col items-center justify-between p-4">
-            <Link 
+            <Link
               href={"/shop/id"}
               className="flex items-center justify-center w-full h-[80%] overflow-hidden "
             >
@@ -46,7 +39,6 @@ export default function HomeProduct() {
             </div>
           </div>
         </div>
-      </div>
       </div>
     </>
   );

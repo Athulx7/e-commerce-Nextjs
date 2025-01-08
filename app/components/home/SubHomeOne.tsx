@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function SubHomeOne() {
   return (
     <>
@@ -16,12 +18,12 @@ export default function SubHomeOne() {
           <h1 className="text-3xl sm:text-5xl font-bold mb-4">
             DISCOVER THE FUTURE OF SHOPPING
           </h1>
-          <p className="text-sm sm:text-xl font-light">
+          <p className="text-sm sm:text-xl font-light pb-5">
             SHOP THE LATEST TRENDS WITH EASE AND CONFIDENCE
           </p>
-          <button className="mt-4 px-6 sm:px-8 py-2 bg-black text-white rounded-sm hover:bg-white border-black border-2 hover:text-black border-solid">
+          <Link href={'/shop'} className=" px-6 sm:px-8 py-2 bg-black text-white rounded-sm hover:bg-white border-black border-2 hover:text-black border-solid">
             SHOP NOW
-          </button>
+          </Link>
         </div>
       </div>
     </>

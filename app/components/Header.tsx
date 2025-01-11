@@ -69,7 +69,7 @@ export default function Header() {
           </Link>
         </div>
 
-        <div className="hidden md:flex space-x-5">
+        {/* <div className="hidden md:flex space-x-5">
           <Link
             href={"/wishlist"}
             className="flex items-center space-x-2 bg-cyan-600 px-4 py-1 rounded-sm font-medium text-white transition-transform duration-500 hover:scale-105"
@@ -92,17 +92,17 @@ export default function Header() {
             <FontAwesomeIcon icon={faPowerOff} className="" />
             
           </button>
-        </div>
+        </div> */}
 
-        {/* <div className="hidden md:flex space-x-5">
+        <div className="hidden md:flex space-x-5">
           <Link
-            href={""}
+            href={"/auth/login"}
             className="flex items-center  space-x-2 bg-cyan-600 px-4 py-1 rounded-sm font-medium text-white transition-transform duration-500 hover:scale-105"
           >
             <FontAwesomeIcon icon={faCircleUser} className="me-3" />
             LOGIN
           </Link>
-        </div> */}
+        </div>
       </div>
 
       {/* Dropdown Menu for Smaller Screens */}

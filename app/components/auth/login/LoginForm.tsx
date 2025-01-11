@@ -24,7 +24,7 @@ export default function LoginForm() {
           }}
         >
           <h4 className="text-2xl font-bold">PRODUCT APP</h4>
-          <h3 className="mt-3 text-xl">Didn't have an Account?</h3>
+          <h3 className="mt-3 text-xl">Didn&apos;t have an Account?</h3>
           <p className="mt-4 text-center">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
             reiciendis eligendi rem illo voluptate, tempora iste. Quisquam,

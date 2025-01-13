@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBagShopping, faHeart } from "@fortawesome/free-solid-svg-icons";
 
 export default function ShopProduct() {
   return (
@@ -19,9 +21,24 @@ export default function ShopProduct() {
                 className="h-full max-h-full object-contain transform transition-transform duration-300 hover:scale-110 "
               />
             </Link>
-            <div className="text-center w-full">
-              <h3 className="font-bold text-gray-600">Product Name</h3>
-              <h3 className="text-gray-600 text-lg">₹ Price</h3>
+            <div className="flex justify-between items-center">
+              <button className="">
+                <FontAwesomeIcon
+                  icon={faBagShopping}
+                  className="me-10 hover:text-cyan-600"
+                />
+              </button>
+
+              <div className="text-center w-full">
+                <h3 className="font-bold text-gray-600">Product Name</h3>
+                <h3 className="text-gray-600 text-lg">₹ Price</h3>
+              </div>
+              <button>
+                <FontAwesomeIcon
+                  icon={faHeart}
+                  className="ms-10 hover:text-red-700"
+                />
+              </button>
             </div>
           </div>
 

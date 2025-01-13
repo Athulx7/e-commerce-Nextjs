@@ -27,13 +27,22 @@ export default function ShopProduct() {
     async function loadProducts() {
       try {
         const response = await getProducts();
-        setProducts(response.data);
+        setProducts(response.data || []); // Fallback to empty array if no data
       } catch (err) {
         console.error("Failed to fetch products:", err);
       }
     }
     loadProducts();
   }, []);
+
+  if (!products || products.length === 0) {
+    // Render a loading state or fallback UI
+    return (
+      <div className="text-center mt-20">
+        <p className="text-gray-600 text-lg">Loading products...</p>
+      </div>
+    );
+  }
 
   return (
     <>

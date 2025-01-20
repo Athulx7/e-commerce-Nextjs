@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import { loginApi } from "../../services/allApi";
 import Swal from "sweetalert2";
 import { toast } from "react-toastify";
@@ -41,7 +41,7 @@ export default function Form() {
     return Object.keys(newError).length === 0;
   };
 
-  const handleSubmit = async (e:any) => {
+  const handleSubmit = async (e:FormEvent<HTMLFormElement>) => {
     e.preventDefault(); 
     if (validation()) {
      

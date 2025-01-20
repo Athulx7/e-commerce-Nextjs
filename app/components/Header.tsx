@@ -9,7 +9,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { MouseEvent, useState } from "react";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,7 +19,7 @@ export default function Header() {
   // console.log(userdata)
   const router = useRouter();
 
-  const handleLogout = (e: any) => {
+  const handleLogout = (e:MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (sessionStorage.getItem("user")) {
       sessionStorage.removeItem("user");

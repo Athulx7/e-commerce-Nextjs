@@ -27,7 +27,7 @@ export default function ShopProduct() {
     async function loadProducts() {
       try {
         const response = await getProducts();
-        setProducts(response.data || []); // Fallback to empty array if no data
+        setProducts(response.data || []); 
       } catch (err) {
         console.error("Failed to fetch products:", err);
       }
@@ -36,7 +36,7 @@ export default function ShopProduct() {
   }, []);
 
   if (!products || products.length === 0) {
-    // Render a loading state or fallback UI
+    
     return (
       <div className="text-center mt-20">
         <p className="text-gray-600 text-lg">Loading products...</p>
@@ -54,7 +54,7 @@ export default function ShopProduct() {
               className="border-2 rounded-sm border-gray-400 w-72 h-96 flex flex-col items-center justify-between p-4"
             >
               <Link
-                href={`/shop/${product.id}`}
+                href={`/shop/${product._id}`}
                 className="flex items-center justify-center w-full h-[80%] overflow-hidden"
               >
                 <Image
@@ -73,7 +73,7 @@ export default function ShopProduct() {
                   />
                 </button>
                 <div className="text-center w-full">
-                  <h3 className="font-bold text-gray-600">{product.title}</h3>
+                  <h3 className="font-bold text-gray-600">{product.title.substring(0,12)}</h3>
                   <h3 className="text-gray-600 text-lg">₹ {product.price}</h3>
                 </div>
                 <button>

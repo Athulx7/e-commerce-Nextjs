@@ -16,3 +16,9 @@ export const getSpecific = async(id)=>{
 export const loginApi = async(body)=>{
     return await commonApi("POST",'/api/auth/login',body,'')
 }
+
+//registser
+
+export const registerApi = async(body)=>{
+    return await commonApi("POST",'/api/auth/register',body,'')
+}

@@ -5,7 +5,7 @@ export default function Login() {
     return(
         <>
         <LoginForm />
-        <ToastContainer />
+        <ToastContainer position="top-center"/>
         </>
     )
 }

@@ -159,7 +159,7 @@ export default function Header() {
                 </button>
               ) : (
                 <Link
-                  href={""}
+                  href={"/auth/login"}
                   className="flex items-center space-x-2 bg-cyan-600 px-4 py-1 rounded-sm font-medium text-white transition-transform duration-500 hover:scale-105"
                 >
                   <FontAwesomeIcon icon={faCircleUser} className="me-3" />

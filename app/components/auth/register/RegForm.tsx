@@ -4,6 +4,7 @@ import { registerApi } from "../../services/allApi";
 import Swal from "sweetalert2";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
+import Link from "next/link";
 
 type ErrorType = {
   name?: string;
@@ -122,6 +123,12 @@ export default function RegForm() {
             REGISTER
           </button>
         </div>
+        <div className="md:hidden flex items-center justify-center mt-2">
+        <span>
+          Back to  <Link href={'/auth/login '} className="text-blue-600">Login</Link>
+        </span>
+
+      </div>
       </form>
     </>
   );

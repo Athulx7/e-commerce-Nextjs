@@ -9,17 +9,25 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { MouseEvent, useState } from "react";
+import { MouseEvent, useEffect, useState } from "react";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [userdata, setUserdata] = useState(null);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const userString = sessionStorage.getItem("user");
+      if (userString) {
+        setUserdata(JSON.parse(userString));
+      }
+    }
+  },[]);
 
-  const userString = sessionStorage.getItem("user");
-  const userdata = userString ? JSON.parse(userString) : null;
+  // const userdata = userString ? JSON.parse(userString) : null;
   // console.log(userdata)
   const router = useRouter();
 
-  const handleLogout = (e:MouseEvent<HTMLButtonElement>) => {
+  const handleLogout = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (sessionStorage.getItem("user")) {
       sessionStorage.removeItem("user");

@@ -32,6 +32,7 @@ export default function Header() {
     if (sessionStorage.getItem("user")) {
       sessionStorage.removeItem("user");
       sessionStorage.removeItem("token");
+      setUserdata(null)
       router.push("/");
     }
   };

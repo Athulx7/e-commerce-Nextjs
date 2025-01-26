@@ -15,8 +15,7 @@ export default function CartTable() {
   const [cartdetails, setCartdetails] = useState<CartItem[]>([]);
 
   const token = sessionStorage.getItem("token");
-  const userdata = JSON.parse(sessionStorage.getItem("user") || "{}");
-
+ 
   const getCartitems = async () => {
     const reqHeader = {
       "Content-Type": "application/json",

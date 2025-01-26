@@ -23,7 +23,7 @@ type Product = {
 export default function WishProducts() {
 
   const token = sessionStorage.getItem('token')
-  const userdata = JSON.parse(sessionStorage.getItem('user') || "{}")
+  
 
   const [wishlistData,setWishlistData] =  useState<Product[]>([])
 

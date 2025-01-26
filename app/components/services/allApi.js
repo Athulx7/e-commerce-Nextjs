@@ -22,3 +22,12 @@ export const loginApi = async(body)=>{
 export const registerApi = async(body)=>{
     return await commonApi("POST",'/api/auth/register',body,'')
 }
+
+
+export const getWishlist = async(reqheader)=>{
+    return await commonApi("GET",'/api/wishlist','',reqheader)
+}
+
+export const getCart = async(reqHeader)=>{
+    return await commonApi("GET",'/api/cart','',reqHeader)
+}

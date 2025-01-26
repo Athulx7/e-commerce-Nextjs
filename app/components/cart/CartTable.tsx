@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { getCart } from "../services/allApi";
 
 interface CartItem {
+  _id:string,
   title: string;
   image: string;
   quantity: number;
@@ -53,7 +54,7 @@ export default function CartTable() {
 
               <tbody className="">
                 {cartdetails.map((cart, index) => (
-                  <tr className="text-center" key={index}>
+                  <tr className="text-center" key={cart._id}>
                     <td className="px-4 py-2">{index + 1}</td>
                     <td className="px-4 py-2">{cart.title.substring(0, 12)}</td>
                     <td className="px-4 py-2">
@@ -93,7 +94,7 @@ export default function CartTable() {
             {/* for the  smaller screens */}
             <div className="block sm:hidden">
               {cartdetails?.map((cart) => (
-                <div className="flex items-center border-b border-gray-300 py-4 px-5">
+                <div className="flex items-center border-b border-gray-300 py-4 px-5" key={cart._id}>
                   <div className="flex-shrink-0 ms">
                     <img
                       src={cart.image}

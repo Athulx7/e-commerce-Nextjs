@@ -22,23 +22,33 @@ type Product = {
 };
 export default function WishProducts() {
 
-  const token = sessionStorage.getItem('token')
-  
-
   const [wishlistData,setWishlistData] =  useState<Product[]>([])
 
-  const getWishlistitems = async()=>{
-    const reqHeader = {
-      "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-    }
-    const result = await getWishlist(reqHeader)
-    setWishlistData(result.data || [])
-  }
 
+
+  
   useEffect(()=>{
-    getWishlistitems()
-  },[])
+    if(typeof window !== 'undefined'){
+      const token = sessionStorage.getItem('token')
+      if(token){
+        const getWishlistitems = async()=>{
+          const reqHeader = {
+            "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+          }
+          const result = await getWishlist(reqHeader)
+          setWishlistData(result.data || [])
+        }
+
+        getWishlistitems()
+
+
+      }
+     
+    }
+  })
+
+  
 
   // console.log(wishlistData)
  

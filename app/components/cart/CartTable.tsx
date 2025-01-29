@@ -15,22 +15,33 @@ interface CartItem {
 export default function CartTable() {
   const [cartdetails, setCartdetails] = useState<CartItem[]>([]);
 
-  const token = sessionStorage.getItem("token");
+  useEffect(()=>{
+    if(typeof window !== 'undefined'){
+      const token = sessionStorage.getItem("token");
+      if(token){
+        const getCartitems = async () => {
+          const reqHeader = {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          };
+      
+          const result = await getCart(reqHeader);
+          // console.log(result)
+          setCartdetails(result.data || []);
+        };
+
+        getCartitems();
+
+      }
+     
+
+    }
+  },[])
+
  
-  const getCartitems = async () => {
-    const reqHeader = {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-    };
+ 
+  
 
-    const result = await getCart(reqHeader);
-    // console.log(result)
-    setCartdetails(result.data || []);
-  };
-
-  useEffect(() => {
-    getCartitems();
-  }, []);
 
   console.log(cartdetails);
 

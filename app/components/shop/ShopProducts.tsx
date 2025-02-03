@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBagShopping, faHeart } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import { getProducts } from "../services/allApi";
+import Aos from 'aos'
+import "aos/dist/aos.css";
 
 type Product = {
   _id: string;
@@ -32,6 +34,10 @@ export default function ShopProduct() {
         console.error("Failed to fetch products:", err);
       }
     }
+
+    
+      Aos.init({duration:1000})
+   
     loadProducts();
   }, []);
 
@@ -52,6 +58,7 @@ export default function ShopProduct() {
             <div
               key={product._id}
               className="border-2 rounded-sm border-gray-400 w-72 h-96 flex flex-col items-center justify-between p-4"
+              data-aos="fade-up"
             >
               <Link
                 href={`/shop/${product._id}`}
@@ -63,6 +70,7 @@ export default function ShopProduct() {
                   width={288}
                   height={388}
                   className="h-full max-h-full object-contain transform transition-transform duration-300 hover:scale-110"
+                   
                 />
               </Link>
               <div className="flex justify-between items-center">

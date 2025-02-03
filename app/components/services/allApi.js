@@ -31,3 +31,12 @@ export const getWishlist = async(reqheader)=>{
 export const getCart = async(reqHeader)=>{
     return await commonApi("GET",'/api/cart','',reqHeader)
 }
+
+
+
+
+//geting the hoenm products limit 8 
+
+export const getHomes = async()=>{
+    return await commonApi("GET",'/api/home',null,null)
+}

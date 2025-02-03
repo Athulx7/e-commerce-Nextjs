@@ -1,7 +1,17 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
-
+import { useEffect } from "react";
+import Aos from 'aos'
+import "aos/dist/aos.css";
 export default function SubHomeOne() {
+
+  useEffect(()=>{
+    Aos.init({duration:1000})
+  })
+  
+
+
   return (
     <>
       <div className="relative px-3 py-5 flex justify-center items-center">
@@ -12,6 +22,7 @@ export default function SubHomeOne() {
           alt="productapp1"
           width={1200} 
           height={1000} 
+          data-aos="fade-up"
         />
 
         
@@ -21,6 +32,7 @@ export default function SubHomeOne() {
           alt="productapp2"
           width={400} 
           height={800} 
+          data-aos="fade-down"
         />
 
         <div className="absolute text-center text-black px-5 sm:px-0">

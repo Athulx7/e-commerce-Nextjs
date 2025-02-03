@@ -6,6 +6,8 @@ import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { getSpecific } from "../services/allApi";
 import Image from "next/image";
+import Aos from 'aos'
+import "aos/dist/aos.css";
 
 
 interface ProductDetails {
@@ -41,6 +43,11 @@ export default function ViewProduct() {
   }, [id]);
 
 
+  useEffect(()=>{
+    Aos.init({duration:2000})
+  })
+
+
   return (
     <div className="py-5">
       <div className="flex p-4">
@@ -71,14 +78,15 @@ export default function ViewProduct() {
               alt="Product"
               width={400}
               height={400}
+              data-aos="zoom-out-down"
             />
             )}
           </div>
 
-          <div className="w-full lg:w-1/2">
+          <div className="w-full lg:w-1/2"  data-aos="fade-up" >
             {productDetails && (
               <>
-                <div className="text-gray-500 text-sm mb-2">
+                <div className="text-gray-500 text-sm mb-2" >
                   {productDetails.category}
                 </div>
                 <h1 className="text-3xl font-bold mb-4">
